@@ -1,0 +1,25 @@
+{
+  "name": "adventures",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app",
+    "dev": "nodemon app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ntr0pie/adventures.git"
+  },
+  "author": "ntr0pie",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ntr0pie/adventures/issues"
+  },
+  "homepage": "https://github.com/ntr0pie/adventures#readme",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "nodemon": "^2.0.22",
+    "openai": "^3.2.1"
+  }
+}
