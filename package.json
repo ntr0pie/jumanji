@@ -1,5 +1,5 @@
 {
-  "name": "cyoa",
+  "name": "jumanji",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ntr0pie/cyoa.git"
+    "url": "git+https://github.com/ntr0pie/jumanji.git"
   },
   "author": "ntr0pie",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ntr0pie/cyoa/issues"
+    "url": "https://github.com/ntr0pie/jumanji/issues"
   },
-  "homepage": "https://github.com/ntr0pie/cyoa#readme",
+  "homepage": "https://github.com/ntr0pie/jumanji#readme",
   "dependencies": {
     "dotenv": "^16.0.3",
     "nodemon": "^2.0.22",
