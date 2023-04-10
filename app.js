@@ -1,8 +1,7 @@
 // Requirements
-const express = require('express');
+const dotenv = require('dotenv').config();
 const path = require('path');
-const dotenv = require('dotenv');
-const exp = require('constants');
+const express = require('express');
 const oaiRouter = require('./routes/oaiRouter');
 const optionsRouter = require('./routes/optionsRouter');
 
@@ -19,7 +18,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Routers
 // OpenAI (GPT and Dall-E API)
-// app.use('/openai', oaiRouter);
+app.use('/openai', oaiRouter);
 
 // Menu
 app.use('/', optionsRouter);
