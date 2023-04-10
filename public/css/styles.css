@@ -77,7 +77,7 @@ main.index-main .game-container #menu {
   padding: 40px;
   gap: 10px;
 }
-main.index-main .game-container #menu button.menu-btn {
+main.index-main .game-container #menu .menu-btn {
   background-color: transparent;
   font-size: 1rem;
   color: #fcfcfc;
@@ -87,7 +87,7 @@ main.index-main .game-container #menu button.menu-btn {
   font-family: Arial, Helvetica, sans-serif;
   transition: background-color 0.5s ease;
 }
-main.index-main .game-container #menu button.menu-btn:hover {
+main.index-main .game-container #menu .menu-btn:hover {
   border-color: #A4E666;
   background-color: #A4E666;
   color: #251c1c;
@@ -100,31 +100,44 @@ main.index-main .game-container #menu form#play button {
   position: relative;
   width: inherit;
   height: inherit;
+  display: flex;
+  flex-direction: column;
 }
-#game-wrapper #game {
+#game-wrapper .game {
   display: flex;
   justify-content: center;
-  height: inherit;
+  align-items: center;
+  height: 100%;
   gap: 30px;
-  padding: 70px;
+  padding: 10px 40px;
 }
-#game-wrapper #game #image-container img {
+#game-wrapper .game #image-container {
   width: 310px;
+  height: 310px;
+  border: 1px solid white;
 }
-#game-wrapper #game #text-container #game-text {
+#game-wrapper .game #image-container #game-image {
+  width: 308px;
+  height: 308px;
+}
+#game-wrapper .game #text-container #game-text {
   margin-left: 10px;
+  width: 490px;
+  height: 147px;
+  display: flex;
+  align-items: center;
 }
-#game-wrapper #game #text-container #game-options {
+#game-wrapper .game #text-container #game-options {
   margin-left: 10px;
   padding: 20px;
 }
-#game-wrapper #game #text-container #game-select {
+#game-wrapper .game #text-container #game-select {
   display: flex;
   justify-content: space-around;
   align-items: center;
   margin-right: 20px;
 }
-#game-wrapper #game #text-container #game-select button.select-btn {
+#game-wrapper .game #text-container #game-select .select-btn {
   height: 30px;
   width: 80px;
   background-color: transparent;
@@ -133,34 +146,41 @@ main.index-main .game-container #menu form#play button {
   border: 1px solid white;
   transition: background-color 0.5s ease;
 }
-#game-wrapper #game #text-container #game-select button.select-btn:hover {
+#game-wrapper .game #text-container #game-select .select-btn:hover {
   border-color: #A4E666;
   background-color: #A4E666;
   color: #251c1c;
 }
 #game-wrapper #nav {
-  display: flex;
-  position: absolute;
-  bottom: 0px;
   width: inherit;
+  display: grid;
+  grid-template-columns: -webkit-max-content 1fr -webkit-max-content;
+  grid-template-columns: max-content 1fr max-content;
+}
+#game-wrapper #nav .nav-btn {
+  border: 1px solid white;
+  height: 100%;
+  padding: 0 20px;
+  text-decoration: none;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  transition: background-color 0.5s ease;
+  font-family: inherit;
+  color: inherit;
+}
+#game-wrapper #nav .nav-btn:hover {
+  border-color: #A4E666;
+  background-color: #A4E666;
+  color: #251c1c;
 }
 #game-wrapper #nav .nav-key {
   font-size: 2rem;
   padding: 10px;
-  transition: background-color 0.5s ease;
   border: 1px solid white;
+  transition: background-color 0.5s ease;
 }
 #game-wrapper #nav .nav-key:hover {
   border-color: #A4E666;
   background-color: #A4E666;
   color: #251c1c;
-}
-#game-wrapper #nav #left-key {
-  border: solid white;
-}
-#game-wrapper #nav #right-key {
-  border: solid white;
 }/*# sourceMappingURL=styles.css.map */

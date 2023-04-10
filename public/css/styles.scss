@@ -85,7 +85,7 @@ main.index-main{
       align-items: center;
       padding: 40px;
       gap: 10px;
-      button.menu-btn{
+      .menu-btn{
           background-color: transparent;
           font-size: 1rem;
           color: $white;
@@ -115,25 +115,36 @@ main.index-main{
   position: relative;
   width: inherit;
   height: inherit;
+  display: flex;
+  // justify-content: center;
+  flex-direction: column;
 
-  #game{
+  .game{
     // padding: 60px;
     display: flex;
     justify-content: center;
-    // align-items: center;
-    height: inherit;
+    align-items: center;
+    height: 100%;
     gap: 30px;
-    padding: 70px;
+    padding: 10px 40px;
 
     #image-container{
-      img{
-        width: 310px;
+      width: 310px;
+      height: 310px;
+      border: 1px solid white;
+      #game-image{
+        width: 308px;
+        height: 308px;
       }
     }
 
     #text-container{
       #game-text{
         margin-left: 10px;
+        width: 490px;
+        height: 147px;
+        display: flex;
+        align-items: center;
       }
       #game-options{
         margin-left: 10px;
@@ -145,7 +156,7 @@ main.index-main{
         justify-content: space-around;
         align-items: center;
         margin-right: 20px;
-        button.select-btn{
+        .select-btn{
           height: 30px;
           width: 80px;
           background-color: transparent;
@@ -166,20 +177,38 @@ main.index-main{
   }
 
   #nav{
-    display: flex;
-    position: absolute;
-    bottom: 0px;
+    // display: flex;
+    // position: absolute;
+    // bottom: 0px;
+    // top: 0px;
     width: inherit;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    // display: none;
+    // justify-content: space-between;
+    // align-items: center;
+    display: grid;
+    grid-template-columns: max-content 1fr max-content;
 
+    .nav-btn{
+      border: 1px solid white;
+      height: 100%;
+      padding: 0 20px;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      transition: background-color .5s ease;
+      font-family: inherit;
+      color: inherit;
+      &:hover {
+        border-color: $green;
+        background-color: $green;
+        color: $brown;
+      }
+    }
+  
     .nav-key{
       font-size: 2rem;
       padding: 10px;
-      transition: background-color .5s ease;
       border: 1px solid white;
+      transition: background-color .5s ease;
       &:hover {
         border-color: $green;
         background-color: $green;
@@ -188,12 +217,13 @@ main.index-main{
     }
 
     #left-key{
-      border: solid white;
+      // border: solid white;
     }
 
     #right-key{
-      border: solid white;
+      // border: solid white;
     }
 
   }
+
 }
