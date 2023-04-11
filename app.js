@@ -24,6 +24,6 @@ app.use('/openai', oaiRouter);
 app.use('/', optionsRouter);
 
 app.listen(port, () => {
-    console.log(`Server listening to port [${port}]`);
+    console.log(`Server: Listening to port [${port}]`);
 })
 
