@@ -1,4 +1,4 @@
-async function generateEvent()
+async function generateEvent(userInput)
 {
     const gameTextBody = document.getElementById('game-text');
     const gameOptions = [
@@ -7,14 +7,14 @@ async function generateEvent()
         document.getElementById('option-three'),
         document.getElementById('option-four')
     ]
-    const gameImage = document.getElementById('game-image')
+    const gameImage = document.getElementById('game-image');
 
     try {
         
         const requestObj = {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
-            body: null
+            body: JSON.stringify({'choice': userInput}),
         };  
 
         const genEveEP = '/openai/generateEvent'
@@ -25,18 +25,18 @@ async function generateEvent()
 
         if(!response.ok)
         {
-            throw new Error("The story couldn't be generated"); 
+            throw new Error("Client: The event couldn't be generated"); 
         }
 
         const data = await response.json();
-        console.log("Client: Success, game initiatlized");
+        console.log("Client: Event generated successfully");
 
         // Update frontend
         gameTextBody.textContent = data.output.description;
-        gameOptions[0].textContent = data.output.options.option1;
-        gameOptions[1].textContent = data.output.options.option2;
-        gameOptions[2].textContent = data.output.options.option3;
-        gameOptions[3].textContent = data.output.options.option4;
+        gameOptions[0].textContent = data.output.options.a || data.output.options.A;
+        gameOptions[1].textContent = data.output.options.b || data.output.options.B;
+        gameOptions[2].textContent = data.output.options.c || data.output.options.C;
+        gameOptions[3].textContent = data.output.options.d || data.output.options.D;
         gameImage.src = data.output.image_url;
 
     } catch (error) {
@@ -45,18 +45,21 @@ async function generateEvent()
 
 }
 
-async function setupGame(){
-    await generateEvent();
+async function main(){
+    await generateEvent(-1);
 }
 
-setupGame();
+main();
+
+
 
 const selectForm = document.getElementById('game-select');
 
 selectForm.addEventListener('submit', onFormSubmit);
-function onFormSubmit(event){
+async function onFormSubmit(event){
     event.preventDefault();
     const option = event.submitter.value;
     console.log(`Option ${option} was selected`);
+    await generateEvent(option);
 }
 
