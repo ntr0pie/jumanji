@@ -1,7 +1,6 @@
 {
   "name": "jumanji",
   "version": "1.0.0",
-  "description": "",
   "main": "app.js",
   "scripts": {
     "start": "node app",
@@ -21,5 +20,6 @@
     "dotenv": "^16.0.3",
     "nodemon": "^2.0.22",
     "openai": "^3.2.1"
-  }
+  },
+  "description": ""
 }
