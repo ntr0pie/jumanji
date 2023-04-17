@@ -1,13 +1,23 @@
+// const { reset } = require("nodemon");
+
+// Document elements
+const gameTextBody = document.getElementById('game-text');
+const gameOptions = [
+    document.getElementById('option-one'),
+    document.getElementById('option-two'),
+    document.getElementById('option-three'),
+    document.getElementById('option-four')
+]
+const gameImage = document.getElementById('game-image');
+const selectForm = document.getElementById('game-select');
+
+const loremIpsumLong = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos ipsam quae adipisci quis illum quibusdam ipsum incidunt enim vel, est mollitia molestias ut velit quo, hic illo, officiis deleniti dolor? Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos ipsam quae adipisci quis illum quibusdam ipsum incidunt enim vel, est mollitia molestias ut velit quo, hic illo, officiis deleniti dolor?'
+const loremIpsumShort = 'Lorem ipsum dolor, sit amet consectetur adipisicing elit.'
+const loremIpsumURL = 'https://miro.medium.com/v2/resize:fit:1400/format:webp/1*ddyz8qnOhFeFKY-_c3tleQ.jpeg'
+
+// Generate event functions
 async function generateEvent(userInput)
 {
-    const gameTextBody = document.getElementById('game-text');
-    const gameOptions = [
-        document.getElementById('option-one'),
-        document.getElementById('option-two'),
-        document.getElementById('option-three'),
-        document.getElementById('option-four')
-    ]
-    const gameImage = document.getElementById('game-image');
 
     try {
         
@@ -46,20 +56,19 @@ async function generateEvent(userInput)
 }
 
 async function main(){
+    console.log("Client: Fresh session")
     await generateEvent(-1);
 }
 
 main();
 
-
-
-const selectForm = document.getElementById('game-select');
-
-selectForm.addEventListener('submit', onFormSubmit);
-async function onFormSubmit(event){
+selectForm.addEventListener('submit', async (event) => {
     event.preventDefault();
     const option = event.submitter.value;
     console.log(`Option ${option} was selected`);
     await generateEvent(option);
-}
+});
 
+function toggleLoadingAnimation(){
+    // TODO
+}

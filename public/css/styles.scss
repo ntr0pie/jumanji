@@ -209,21 +209,13 @@ main.index-main{
       padding: 10px;
       border: 1px solid white;
       transition: background-color .5s ease;
+      color: $green;
       &:hover {
         border-color: $green;
         background-color: $green;
         color: $brown;
       }
     }
-
-    #left-key{
-      // border: solid white;
-    }
-
-    #right-key{
-      // border: solid white;
-    }
-
   }
 
 }

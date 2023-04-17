@@ -178,6 +178,7 @@ main.index-main .game-container #menu form#play button {
   padding: 10px;
   border: 1px solid white;
   transition: background-color 0.5s ease;
+  color: #A4E666;
 }
 #game-wrapper #nav .nav-key:hover {
   border-color: #A4E666;
