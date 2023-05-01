@@ -59,7 +59,9 @@ async function generateImage(outputJSON){
     console.log("Server: Generating image");
     // Update eventHistory
     updateEventHistory('assistant', JSON.stringify(outputJSON));
-    const request = {prompt: outputJSON.image_prompt, n: 1, size: '256x256'}
+    // const image_config = "Nikon D810 | ISO 64 | focal length 20mm (Voigtländer 20mm f3.5) | Aperture f/9 | Exposure Time 1/40 Sec (DRI)"
+    const image_config = "Sigma 24mm f/8"
+    const request = {prompt: outputJSON.image_prompt + image_config, n: 1, size: '256x256'}
     const response = await await openai.createImage(request);
     const imageUrl = response.data.data[0].url;
     console.log("Server: Generated image successfully");
