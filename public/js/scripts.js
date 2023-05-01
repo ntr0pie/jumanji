@@ -74,15 +74,15 @@ selectForm.addEventListener('submit', async (event) => {
 
 function setGameState(state){
     if (state == 1){
-        // errorWrapper.classList.add('hide');
-        // gameWrapper.classList.add('hide');
-        // loadingWrapper.classList.remove('hide');
+        errorWrapper.classList.add('hide');
+        gameWrapper.classList.add('hide');
+        loadingWrapper.classList.remove('hide');
         selectForm.classList.add('no-click')
     }
     if(state == 0){
-        // errorWrapper.classList.add('hide');
-        // loadingWrapper.classList.add('hide');
-        // gameWrapper.classList.remove('hide');
+        errorWrapper.classList.add('hide');
+        loadingWrapper.classList.add('hide');
+        gameWrapper.classList.remove('hide');
         selectForm.classList.remove('no-click')
 
     }
