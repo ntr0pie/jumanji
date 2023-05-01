@@ -12,10 +12,6 @@ const gameWrapper = document.getElementsByClassName('game-wrapper')[0];
 const loadingWrapper = document.getElementsByClassName('loading-wrapper')[0];
 const errorWrapper = document.getElementsByClassName('error-wrapper')[0];
 
-const loremIpsumLong = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos ipsam quae adipisci quis illum quibusdam ipsum incidunt enim vel, est mollitia molestias ut velit quo, hic illo, officiis deleniti dolor? Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos ipsam quae adipisci quis illum quibusdam ipsum incidunt enim vel, est mollitia molestias ut velit quo, hic illo, officiis deleniti dolor?'
-const loremIpsumShort = 'Lorem ipsum dolor, sit amet consectetur adipisicing elit.'
-const loremIpsumURL = 'https://miro.medium.com/v2/resize:fit:1400/format:webp/1*ddyz8qnOhFeFKY-_c3tleQ.jpeg'
-
 // Generate event functions
 async function generateEvent(userInput)
 {
@@ -35,7 +31,7 @@ async function generateEvent(userInput)
             console.log("Client: Requesting GPT to generate next event");
         }
 
-        loadingAnimation(1);
+        setGameState(1);
         const response = await fetch(genEveEP, requestObj);
 
         if(!response.ok)
@@ -53,11 +49,11 @@ async function generateEvent(userInput)
         gameOptions[2].textContent = data.output.options.c || data.output.options.C;
         gameOptions[3].textContent = data.output.options.d || data.output.options.D;
         gameImage.src = data.output.image_url;
-        loadingAnimation(0);
+        setGameState(0);
 
     } catch (error) {
         console.log(error);
-        loadingAnimation(-1);
+        setGameState(-1);
     }
 
 }
@@ -76,17 +72,19 @@ selectForm.addEventListener('submit', async (event) => {
     await generateEvent(option);
 });
 
-function loadingAnimation(state){
+function setGameState(state){
     if (state == 1){
-        errorWrapper.classList.add('hide');
-        gameWrapper.classList.add('hide');
-        loadingWrapper.classList.remove('hide');
+        // errorWrapper.classList.add('hide');
+        // gameWrapper.classList.add('hide');
+        // loadingWrapper.classList.remove('hide');
+        selectForm.classList.add('no-click')
     }
     if(state == 0){
-        errorWrapper.classList.add('hide');
-        loadingWrapper.classList.add('hide');
-        gameWrapper.classList.remove('hide');
-        
+        // errorWrapper.classList.add('hide');
+        // loadingWrapper.classList.add('hide');
+        // gameWrapper.classList.remove('hide');
+        selectForm.classList.remove('no-click')
+
     }
     if(state == -1){
         gameWrapper.classList.add('hide');

@@ -522,4 +522,8 @@ main.index-main .game-container #menu form#play button {
 
 .hide {
   display: none;
+}
+
+.no-click {
+  pointer-events: none;
 }/*# sourceMappingURL=styles.css.map */

@@ -374,3 +374,7 @@ main.index-main{
 .hide{
   display: none;
 }
+
+.no-click{
+  pointer-events: none;
+}
