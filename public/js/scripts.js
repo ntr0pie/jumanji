@@ -1,5 +1,3 @@
-// const { reset } = require("nodemon");
-
 // Document elements
 const gameTextBody = document.getElementById('game-text');
 const gameOptions = [
@@ -30,7 +28,12 @@ async function generateEvent(userInput)
 
         const genEveEP = '/openai/generateEvent'
 
-        console.log("Client: Requesting GPT to initalize game");
+        if (userInput == -1){
+            console.log("Client: Requesting GPT to initalize game");
+        }
+        else{
+            console.log("Client: Requesting GPT to generate next event");
+        }
 
         loadingAnimation(1);
         const response = await fetch(genEveEP, requestObj);
@@ -69,7 +72,7 @@ main();
 selectForm.addEventListener('submit', async (event) => {
     event.preventDefault();
     const option = event.submitter.value;
-    console.log(`Option ${option} was selected`);
+    console.log(`Client: Option ${option} was selected`);
     await generateEvent(option);
 });
 

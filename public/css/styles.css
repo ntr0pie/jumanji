@@ -151,36 +151,21 @@ main.index-main .game-container #menu form#play button {
   background-color: #A4E666;
   color: #251c1c;
 }
-.game-wrapper #nav {
+
+#nav {
   width: inherit;
   display: grid;
   grid-template-columns: -webkit-max-content 1fr -webkit-max-content;
   grid-template-columns: max-content 1fr max-content;
 }
-.game-wrapper #nav .nav-btn {
-  border: 1px solid white;
-  height: 100%;
-  padding: 0 20px;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  transition: background-color 0.5s ease;
-  font-family: inherit;
-  color: inherit;
-}
-.game-wrapper #nav .nav-btn:hover {
-  border-color: #A4E666;
-  background-color: #A4E666;
-  color: #251c1c;
-}
-.game-wrapper #nav .nav-key {
+#nav .nav-key {
   font-size: 2rem;
+  color: #A4E666;
   padding: 10px;
   border: 1px solid white;
   transition: background-color 0.5s ease;
-  color: #A4E666;
 }
-.game-wrapper #nav .nav-key:hover {
+#nav .nav-key:hover {
   border-color: #A4E666;
   background-color: #A4E666;
   color: #251c1c;
@@ -527,6 +512,12 @@ main.index-main .game-container #menu form#play button {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: row;
+}
+.error-wrapper .nav-key {
+  font-size: 4rem;
+  color: #A4E666;
+  font-family: inherit;
 }
 
 .hide {

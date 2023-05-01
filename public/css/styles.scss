@@ -176,44 +176,28 @@ main.index-main{
     }
     
   }
+}
 
-  #nav{
-    width: inherit;
-    display: grid;
-    grid-template-columns: max-content 1fr max-content;
+// in game nav keys
+#nav{
+  width: inherit;
+  display: grid;
+  grid-template-columns: max-content 1fr max-content;
 
-    .nav-btn{
-      border: 1px solid white;
-      height: 100%;
-      padding: 0 20px;
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      transition: background-color .5s ease;
-      font-family: inherit;
-      color: inherit;
-      &:hover {
-        border-color: $green;
-        background-color: $green;
-        color: $brown;
-      }
-    }
-  
-    .nav-key{
-      font-size: 2rem;
-      padding: 10px;
-      border: 1px solid white;
-      transition: background-color .5s ease;
-      color: $green;
-      &:hover {
-        border-color: $green;
-        background-color: $green;
-        color: $brown;
-      }
+  // reload and nav key
+  .nav-key{
+    font-size: 2rem;
+    color: $green;
+    padding: 10px;
+    border: 1px solid white;
+    transition: background-color .5s ease;
+    &:hover {
+      border-color: $green;
+      background-color: $green;
+      color: $brown;
     }
   }
 }
-
 
 // loading animation
 :root {
@@ -379,6 +363,12 @@ main.index-main{
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: row;
+  .nav-key{
+    font-size: 4rem;
+    color: $green;
+    font-family: inherit;
+  }
 }
 
 .hide{
